@@ -1,0 +1,281 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMWv7GnaFfDwra+hzAXCAYa",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aashiadhikari12-hub/400-python-projects/blob/main/002_units_convertr.ipnyb.\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Project 002: Unit converter\n",
+        "I want to build a program that convert kilometers into miles.\n",
+        "lets see how i will learn from scartch to get the coding for this problem.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "a5a0u_06YIhl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kilometers = 10\n",
+        "print(kilometers)\n",
+        "# 1 kilometer is approximately 0.621371 so we can actually multiply it.\n",
+        "miles = kilometers * 0.621371\n",
+        "print(miles)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aDVKzsmRYeFJ",
+        "outputId": "1be0c4b2-d519-45a0-96ec-f811e6558934"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "6.21371\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# So , lets allow our user to actually enter the value of kilometer.\n",
+        "# lets imagine somone wants to convert 25km or 100 km .\n",
+        "distance = float(input(\"Enter the distance that is travelled in kilometers.\"))\n",
+        "miles = distance * 0.627371\n",
+        "print(distance, \"km\")\n",
+        "print(f\"{miles:.2f}, miles\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_sKOE4U3ZQdI",
+        "outputId": "52d6aa0b-c9cc-413b-cbfe-d4eb797f16e3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the distance that is travelled in kilometers.25\n",
+            "25.0 km\n",
+            "15.68, miles\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# lets work on try and except to handle errors when the user unexpectendly enter invalid number\n",
+        "try:\n",
+        "    distance = float(input(\"Enter the distance travelled in kilometers.\"))\n",
+        "    miles = distance * 0.621371\n",
+        "    print(distance, \"km\")\n",
+        "    print(miles)\n",
+        "except ValueError:\n",
+        "      print(\"Invalid input, so please try again.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zNkHAkCxa8in",
+        "outputId": "9900cdd4-8895-46aa-8aca-e9f665bdfb4e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the distance travelled in kilometers.9\n",
+            "9.0 km\n",
+            "5.592339\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# sometimes we even put negative value inentonally or unintentionally.\n",
+        "# so or that lets learn if and else application to handle such error, combining the ability to handle errors.\n",
+        "try:\n",
+        "  distance = float(input(\" enter the distance travelled in kilomerters\"))\n",
+        "  if distance < 0:\n",
+        "    print(\" Distance can never be negative value\")\n",
+        "  else:\n",
+        "    miles = distance * 0.621371\n",
+        "except ValueError:\n",
+        "  print(\" Please enter an invalid number.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BnYBQMc9cakV",
+        "outputId": "edde192e-4954-425c-b944-612022721dd1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            " enter the distance travelled in kilomerters90\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "  print(\"Ready to convert\")\n",
+        "  break\n",
+        "  # The reason behind using while and break loop is because it helps the user to\n",
+        "  # asked for another distance automatically?\n",
+        "  # if we didnot use break , it bcome infinite loop and it keep repeatingthe same thing infinite times.\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VJlgiI_3f1-_",
+        "outputId": "37b795eb-04cc-4c8c-871a-8a2d792fb3dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ready to convert\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# we will learn to ask or mutliple distances of user. this will keep repeatingthe questions.\n",
+        "while True:\n",
+        "  answer = input(\" Do you want to continue?\")\n",
+        "  if answer == \"no\":\n",
+        "    break"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GNOS6gZ_hwMj",
+        "outputId": "e0ad05e2-7615-437d-b0e1-0fe254ed74ee"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            " Do you want to continue?yes\n",
+            " Do you want to continue?no\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# lets add the conversion formula and made a single coding:\n",
+        "while True:\n",
+        "  distance = input(\" enter the distance travelled in kiometers or type q to quit:\")\n",
+        "  if distance == \"q\":\n",
+        "    print(\"Good bye. Have a nice day ahead.\")\n",
+        "    try:\n",
+        "      distance = float(input(\"entr the distance travelled in kilometers:\"))\n",
+        "      if distance < 0:\n",
+        "        print(\" Distance can never be zero.\")\n",
+        "      else:\n",
+        "        miles = distance * 0.621371\n",
+        "        print(f\"{miles:,.2f}, miles \")\n",
+        "    except ValueError:\n",
+        "      print(\" Please enter a vlid number.\")\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_Fp-ryPTjdIA",
+        "outputId": "05a8acc9-8b73-4b1d-fdf5-5753ff19969a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "metadata": {
+            "tags": null
+          },
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Good bye. Have a nice day ahead.\n",
+            "5.59, miles \n",
+            "Good bye. Have a nice day ahead.\n",
+            "0.00, miles \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "So doing this, whati have learned is:\n",
+        "input() = get user input\n",
+        "float() = convert text to a number\n",
+        "if/else = make decisions\n",
+        "while = repeat the instructions.\n",
+        "try/except = handle invalid input\n",
+        "break = stop the loop\n",
+        "last but not the least= miles : kilometer * 0.621371\n"
+      ],
+      "metadata": {
+        "id": "BRuDH_QBl4Wc"
+      }
+    }
+  ]
+}
