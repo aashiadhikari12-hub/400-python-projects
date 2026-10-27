@@ -1,0 +1,291 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMqovZibNLciLsNG4jIutvB",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aashiadhikari12-hub/400-python-projects/blob/main/Project%20003%3D%20Vat%20Calculator\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This is project 003 - VAT and GST calculator\n",
+        "under this project i am trying to learn how to caalculate every invoice using python than manually tallying the actual amount without making errors and mistakes.\n",
+        "i will be able to answer the foloowing question usingthe  python programming:\n",
+        "1. what is the original price?\n",
+        "2. what tax rate should apply ?\n",
+        "3. how much is the tax ?\n",
+        "4. what is the final price including tax ?\n",
+        "5. if tax already included in price , then how much value is included ?\n",
+        "lets gooooooooooooo......\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "9Y1-yoeyWPfR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# lets calculate the tax\n",
+        "sales_price = float(input(\"Enter the amount of sales_price.\"))\n",
+        "vat = float(input(\"enter the vat rate.\"))\n",
+        "vat_amount = sales_price * (vat / 100)\n",
+        "sales_with_vat = sales_price + vat_amount\n",
+        "print(\"\\n-----Bill Summary----\\n\")\n",
+        "print(f\" The value of vat_amount is {vat_amount}\")\n",
+        "print(f\" The value of final_price is {sales_with_vat}\")\n"
+      ],
+      "metadata": {
+        "id": "bbM1u4WyWxlX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Lets extract the included tax from final price to kow the value before sp with vat.\n",
+        "final_price = float(input(\" Enter the final price :\"))\n",
+        "vat = float(input(\" enter the vat rate:\"))\n",
+        "vat_amount = final_price * (vat / 100)\n",
+        "sales = final_price - vat_amount\n",
+        "print(\"\\n-----Bill Summary----\\n\")\n",
+        "print(f\"The vat amount is {vat_amount}\")\n",
+        "print(f\"The sales_price is {sales} \")"
+      ],
+      "metadata": {
+        "id": "DCEWv-SaZImN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# lets use if elif and else to either add or extract the tax.\n",
+        "price = float(input(\"Enter the value of price :\"))\n",
+        "tax_rate = float(input(\"enter the tax_rate:\"))\n",
+        "\n",
+        "mode = input(\"Type either add or extract:\").lower()\n",
+        "if mode == \"add\":\n",
+        "  tax_amount = price * (tax_rate / 100)\n",
+        "  final_price = price + tax_amount\n",
+        "  print(tax_amount)\n",
+        "  print(final_price)\n",
+        "\n",
+        "if mode == \"extract\":\n",
+        "  tax_amount = price * (tax_rate / 100)\n",
+        "  sales_price = price - tax_amount\n",
+        "  print(tax_amount)\n",
+        "  print(sales_price)"
+      ],
+      "metadata": {
+        "id": "qVLdGcwOa4xs"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# we can also use function to get the value.\n",
+        "# Function to calculate VAT and final price\n",
+        "def get_price(price, rate):\n",
+        "    tax = price * (rate / 100)\n",
+        "    final_price = price + tax\n",
+        "    return tax, final_price\n",
+        "\n",
+        "\n",
+        "# Call the function outside the function definition\n",
+        "tax, final_price = get_price(9000, 13)\n",
+        "print(tax)\n",
+        "print(final_price)\n",
+        "\n",
+        "print(get_price(80000, 13))\n",
+        "print(get_price(11000, 12))\n",
+        "print(get_price(13000, 13))\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mh0vAmx-ci_P",
+        "outputId": "17291d8d-8f3b-454f-f2a2-86e323e45ce5"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1170.0\n",
+            "10170.0\n",
+            "(10400.0, 90400.0)\n",
+            "(1320.0, 12320.0)\n",
+            "(1690.0, 14690.0)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# lets run all this together\n",
+        "def add_tax(price, rate):\n",
+        "    tax = price * rate / 100\n",
+        "    return tax\n",
+        "\n",
+        "\n",
+        "def extract_tax(total, rate):\n",
+        "    tax = total * rate / (100 + rate)\n",
+        "    return tax\n",
+        "\n",
+        "\n",
+        "def main():\n",
+        "    price = float(input(\"Enter price: NPR \"))\n",
+        "    rate = float(input(\"Enter tax rate (%): \"))\n",
+        "\n",
+        "    mode = input(\"Type 'add' or 'extract': \").strip().lower()\n",
+        "\n",
+        "    if price < 0 or rate < 0:\n",
+        "        print(\"Price and rate cannot be negative.\")\n",
+        "        return\n",
+        "\n",
+        "    if mode == \"add\":\n",
+        "        tax = add_tax(price, rate)\n",
+        "        total = price + tax\n",
+        "        original_price = price\n",
+        "\n",
+        "    elif mode == \"extract\":\n",
+        "        tax = extract_tax(price, rate)\n",
+        "        total = price\n",
+        "        original_price = total - tax\n",
+        "\n",
+        "    else:\n",
+        "        print(\"Invalid mode. Type add or extract.\")\n",
+        "        return\n",
+        "\n",
+        "    print(f\"Original price: NPR {original_price:.2f}\")\n",
+        "    print(f\"Tax amount: NPR {tax:.2f}\")\n",
+        "    print(f\"Final price: NPR {total:.2f}\")\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o0pHJasMiVtr",
+        "outputId": "e921d35a-afce-4904-80a7-ac146a54943d"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter price: NPR 5000\n",
+            "Enter tax rate (%): 13\n",
+            "Type 'add' or 'extract': add\n",
+            "Original price: NPR 5000.00\n",
+            "Tax amount: NPR 650.00\n",
+            "Final price: NPR 5650.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Sometimes it doesn't go the right way where the user may use diferent invalid number and cause error.\n",
+        "try:\n",
+        "  price = float(input(\"Enter the value of price:\"))\n",
+        "  rate = float(input(\"Enter the vat rate:\"))\n",
+        "except ValueError:\n",
+        "  print(\" Please enter the valid number.\")\n",
+        "if price < 0 or rate < 0:\n",
+        "  print(\"Price and vat cannot be negative number\")\n",
+        "\n",
+        "else:\n",
+        "  mode = input(\" type either add or extract.\").lower().strip()\n",
+        "  if mode == \"add\":\n",
+        "    tax_amount = price * (rate / 100)\n",
+        "    final_price = price + tax\n",
+        "\n",
+        "  elif mode == \"extract\":\n",
+        "    tax = price * ( rate / 100 + rate)\n",
+        "    original_price = price - tax\n",
+        "\n",
+        "  else:\n",
+        "    print(\"Enter the invalid number.\")\n",
+        "    exit()\n",
+        "  print(tax_amount)\n",
+        "  print(tax)\n",
+        "  print(final_price)\n",
+        "  print(original_price)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "AAaOAaTEmVwX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try:\n",
+        "  price = float(input(\" enter thevalue o price:\"))\n",
+        "  rate = float(input(\"Enter the tax rate:\"))\n",
+        "except ValueError:\n",
+        "  print(\" Please enter a valid number:\")\n",
+        "if price < 0 or rate < 0:\n",
+        "  print(\"Price or rate canot be negative\")\n",
+        "else:\n",
+        "  mode = input(\" Type either add or extract:\").lower().strip()\n",
+        "if mode == \"add\"\n",
+        "  tax = price * (rate / 100)\n",
+        "  final_price = price + tax\n",
+        "elif mode == \"extract\":\n",
+        "  tax = price * (rate / 100 + rate)\n",
+        "  original_price = price + tax\n",
+        "else:\n",
+        "  print(\"This is invalid number so please try again.\")\n",
+        "  exit()\n",
+        "  print(tax)\n",
+        "  print(final_price)\n",
+        "  print(original_price)\n"
+      ],
+      "metadata": {
+        "id": "A3ZqCbxNqv2f"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
