@@ -1,0 +1,222 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNp/xk6fELvHPGBYTfWKTzA",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aashiadhikari12-hub/400-python-projects/blob/main/project%20004%20-%20%20Simple%20interest%20and%20EMI%20calculator\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Project 004 - Simple interest and EMI calculator\n",
+        "\n",
+        " This project combines two useful financial tools using python\n",
+        "\n",
+        " **Simple Interest**- Calculates interest and the total amount\n",
+        "\n",
+        " **EMI calculator**- Calculates monthly loanpayments and total interests\n",
+        "\n",
+        " The purpose of this projectis to make financial calculations eaiers faste and more accurate.\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "DhtFtsTz6ii9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"-----Financial Calculator----\")\n",
+        "print(\"1. Simple Interest\")\n",
+        "print(\"2. EMI Calculator \")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v40HVSkk8O_G",
+        "outputId": "4492eed9-0359-4fdd-d709-de2748670d91"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-----Financial Calculator----\n",
+            "1. Simple Interest\n",
+            "2. EMI Calculator \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# (Lets understand how simple interest calculatethe value.\n",
+        "# Simple interest = (principal * rate * time) / 100\n",
+        "# Total amount  = Principal + Simple interest)\n",
+        "principal = float(input(\"Enter the original amount.\"))\n",
+        "rate = float(input(\"Enter the interest rate.\"))\n",
+        "time = float(input(\" enter the time period of amount:\"))\n",
+        "if principal <= 0 or rate <= 0 or time <= 0:\n",
+        "  print(\"Please enter a valid  number.\")\n",
+        "else:\n",
+        "  interest = principal * rate * time / 100\n",
+        "  total = principal + interest\n",
+        "  print(f\"The value of simple interest is {interest:,.2f}\")\n",
+        "  print(f\" The total amount is {total:,.2f}\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RAEsZyMY-yIZ",
+        "outputId": "5f2bca0d-9c7e-41db-bcb9-4aa5133026b3"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the original amount.90000\n",
+            "Enter the interest rate.9\n",
+            " enter the time period of amount:2\n",
+            "The value of simple interest is 16,200.00\n",
+            " The total amount is 106,200.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# EMI stands for equated monthly installment. It is the fixed monthly paymentor borrower makes towards the loan\n",
+        "# This calculator estimates the monthly payment, total repayment and total interest\n",
+        "# EMI = p * r * (1 + r) ** n / ((1 + r) ** n - 1)\n",
+        "print(\"----EMI Calculator----\")\n",
+        "principal = float(input(\"enter the value of original amount:\"))\n",
+        "annual_rate = float(input(\" Enter the value of interest rate:\"))\n",
+        "years = float(input(\"Enter the number of years:\"))\n",
+        "if principal <= 0 or annual_rate <= 0 or years <= 0:\n",
+        "  print(\"Please enter a valid data only\")\n",
+        "else:\n",
+        "  rate = annual_rate / 100\n",
+        "  months =  years * 12\n",
+        "  emi = principal * rate * (1 + rate) ** months / (( 1+ rate )** months - 1)\n",
+        "  total = emi * months\n",
+        "  print(f\" The monthly Emi is {emi:.2f}\")\n",
+        "  print(f\" The total emi calculation is {total:,.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OyDp0-HtAltU",
+        "outputId": "0722524b-38e3-4044-fe7e-10b46db787c3"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "----EMI Calculator----\n",
+            "enter the value of original amount:500000\n",
+            " Enter the value of interest rate:8\n",
+            "Enter the number of years:1\n",
+            " The monthly Emi is 66347.51\n",
+            " The total emi calculation is 796,170.10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Error handling helps the calculator preventing from crashing or producing incorrect result.\n",
+        "try:\n",
+        "  principal = float(input(\" Enter the original amount:\"))\n",
+        "  rate = float(input(\"enter the value of interest rate:\"))\n",
+        "  time = float(input(\" enter the time period:\"))\n",
+        "  interest = principal * rate * time / 100\n",
+        "  total = principal + interest\n",
+        "  print(f\" the value of simple interest is { interest:,.2f}\")\n",
+        "  print(f\" The value  of total amount is {total:,.2f}\")\n",
+        "except ValueError:\n",
+        "  print(\" please enter a valid number.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xNWwHdW6DpfE",
+        "outputId": "8f95c42b-6001-462e-ae48-465e9ce79197"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            " Enter the original amount:9000\n",
+            "enter the value of interest rate:8\n",
+            " enter the time period:0\n",
+            " the value of simple interest is 0.00\n",
+            " The alue  of total amount is 9,000.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# EMI calculator - Handles unralistic loan durations:\n",
+        "try:\n",
+        "  principal = float(input(\" Enter the value of orignal amount:\"))\n",
+        "  rate = float(input(\"Enter the value of interest rate :\"))\n",
+        "  time = float(input(\" Enter the value of time period:\"))\n",
+        "  if time > 50:\n",
+        "    print(\" A loan cannotexceed more than 50 years\")\n",
+        "  else:\n",
+        "    monthly_rate = rate / 1200\n",
+        "    months = years * 12\n",
+        "  if monthly_rate == 0:\n",
+        "    emi = principal * monthly_rate * (1 + monthly_rate) ** months / ((1 + monthly_rate) ** months - 1)\n",
+        "    print(emi)\n",
+        "except ValueError:\n",
+        "  print(\" Error \")\n"
+      ],
+      "metadata": {
+        "id": "W3k8eE3tGMqT"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
