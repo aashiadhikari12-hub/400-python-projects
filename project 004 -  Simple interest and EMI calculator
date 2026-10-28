@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNp/xk6fELvHPGBYTfWKTzA",
+      "authorship_tag": "ABX9TyMcy2+7xcSAUF0wi58vhoe8",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -192,31 +192,6 @@
           ]
         }
       ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "# EMI calculator - Handles unralistic loan durations:\n",
-        "try:\n",
-        "  principal = float(input(\" Enter the value of orignal amount:\"))\n",
-        "  rate = float(input(\"Enter the value of interest rate :\"))\n",
-        "  time = float(input(\" Enter the value of time period:\"))\n",
-        "  if time > 50:\n",
-        "    print(\" A loan cannotexceed more than 50 years\")\n",
-        "  else:\n",
-        "    monthly_rate = rate / 1200\n",
-        "    months = years * 12\n",
-        "  if monthly_rate == 0:\n",
-        "    emi = principal * monthly_rate * (1 + monthly_rate) ** months / ((1 + monthly_rate) ** months - 1)\n",
-        "    print(emi)\n",
-        "except ValueError:\n",
-        "  print(\" Error \")\n"
-      ],
-      "metadata": {
-        "id": "W3k8eE3tGMqT"
-      },
-      "execution_count": null,
-      "outputs": []
     }
   ]
 }
