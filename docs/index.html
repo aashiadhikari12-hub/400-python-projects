@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Number Guessing Game</title>
-    <link rel="stylesheet"
-    href="style.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -23,13 +27,13 @@
         max="100"
     >
 
-    <button>Submit Guess</button>
+    <button id="submitButton">Submit Guess</button>
 
     <p id="message">Your result will appear here.</p>
 
-    <p>Attempts: 0</p>
+    <p>Attempts: <span id="attempts">0</span></p>
 
-    <button>Play Again</button>
+    <button id="playAgainButton">Play Again</button>
 
 </body>
 
