@@ -17,8 +17,7 @@ A beginner-friendly game where players try to guess a randomly generated number 
 
 ##  Play the Game
 
-### [▶ CLICK HERE TO PLAY THE GAME](https://aashiadhikari12-hub.github.io/400-python-projects/)
-
+### [CLICK HERE TO PLAY THE GAME](https://aashiadhikari12-hub.github.io/400-python-projects/docs/)
 No installation or coding required. Just open the website and play!
 
 ##  Technologies Used
