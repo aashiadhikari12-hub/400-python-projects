@@ -1,6 +1,6 @@
 
 
----# 🐍 400 Python Projects
+---#  400 Python Projects
 
 ### My journey of learning Python by building 400 practical projects.
 
@@ -15,20 +15,20 @@ Each project represents a step forward in my learning journey.
 
 A beginner-friendly game where players try to guess a randomly generated number between 1 and 100.
 
-## 🚀 Play the Game
+##  Play the Game
 
 ### [▶ CLICK HERE TO PLAY THE GAME](https://aashiadhikari12-hub.github.io/400-python-projects/)
 
 No installation or coding required. Just open the website and play!
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Python** — Original game implementation
 - **HTML** — Webpage structure
 - **CSS** — Styling and layout
 - **JavaScript** — Browser-based game logic
 
-## ✨ Features
+## Features
 
 - Random number generation
 - Higher and lower hints
@@ -36,7 +36,7 @@ No installation or coding required. Just open the website and play!
 - Attempt counter
 - Play again option
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 Through this project, I practiced:
 
@@ -47,24 +47,6 @@ Through this project, I practiced:
 - User input and validation
 - Random number generation
 - Connecting HTML, CSS, and JavaScript
-
-## 📂 Project Structure
-
-```text
-400-python-projects/
-│
-├── docs/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
-├── python-version/
-│   └── number_guessing_game.ipynb
-│
-└── README.md
-```
-
----
 
 **One project at a time. One step closer to mastering Python.**
   
