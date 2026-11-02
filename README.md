@@ -45,7 +45,6 @@ Through this project, I practiced:
 - Functions
 - User input and validation
 - Random number generation
-- Connecting HTML, CSS, and JavaScript
 
 **One project at a time. One step closer to mastering Python.**
   
